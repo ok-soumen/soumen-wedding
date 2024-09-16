@@ -390,14 +390,38 @@ img {
 }
 
 .bottom-decoration-right {
-  position: absolute;
-  top: 213px;
-  right: -27%;
-  transform: translateX(-50%);
-  height: 80vh;
-  width: 40%;
-  z-index: -1;
-}
+	position: absolute;
+	top: 213px; /* Distance from the top */
+	right: 0; /* Aligns the right edge with the right edge of the viewport */
+	transform: translateX(0); /* Remove horizontal translation if not needed */
+	height: 80vh; /* Height of the element */
+	max-width: 40%; /* Ensure the width does not exceed 40% of the viewport width */
+	box-sizing: border-box; /* Include padding and border in the width/height calculation */
+	z-index: -1; /* Place behind other content */
+  }
+  
+  @media (max-width: 1024px) {
+	.bottom-decoration-right {
+	  max-width: 50%; /* Adjust width for medium screens */
+	  right: 0; /* Ensure alignment for medium screens */
+	}
+  }
+  
+  @media (max-width: 768px) {
+	.bottom-decoration-right {
+	  max-width: 60%; /* Adjust width for smaller screens */
+	  right: 0; /* Ensure alignment for smaller screens */
+	}
+  }
+  
+  @media (max-width: 480px) {
+	.bottom-decoration-right {
+	  max-width: 80%; /* Adjust width for very small screens */
+	  right: 0; /* Ensure alignment for very small screens */
+	}
+  }
+  
+  
 
 /* Medium screens (tablets) */
 @media (max-width: 768px) {
